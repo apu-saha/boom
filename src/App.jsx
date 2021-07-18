@@ -1,14 +1,36 @@
 import React from 'react'
-import FakePlayer from './components/FakePlayer.jsx'
+import { Route } from 'react-router-dom'
+
+import GamePage from './components/GamePage.jsx'
+import Spiner from './components/Spiner'
 
 export default function App() {
-  const title = 'Watch Rugby Live Streaming HD'
+  const [data, setData] = React.useState(null)
+
+  React.useEffect(() => {
+    fetch('/data.json')
+      .then(res => res.json())
+      .then(data => setData(data))
+  }, [setData])
+
+  if (!data) return <FullPageSpiner />
+
+  return data.games.map(({ affiliate, image, slug, title }) => (
+    <Route key={slug} path={`/${slug}`}>
+      <GamePage
+        link={affiliate}
+        title={title}
+        image={image}
+        liveItems={data.liveNow}
+      />
+    </Route>
+  ))
+}
+
+function FullPageSpiner() {
   return (
-    <div className="h-screen bg-gray-800 text-white">
-      <h1 className="text-white text-center text-3xl py-12 font-medium">
-        {title}
-      </h1>
-      <FakePlayer title={title} />
+    <div className="h-screen flex justify-center items-center">
+      <Spiner />
     </div>
   )
 }

@@ -6,11 +6,13 @@ import {
   IoSettingsSharp,
   IoExpandSharp,
   IoCheckmarkCircleSharp,
-  IoChevronForwardCircleOutline,
 } from 'react-icons/io5'
 
-export default function FakePlayer({ title }) {
-  const modalDelay = 2000
+import GoLinkButton from './GoLinkButton'
+import Spiner from './Spiner'
+
+export default function FakePlayer({ title, image, link }) {
+  const modalDelay = 1000
   const [spin, setSpin] = React.useState(false)
   const [openModal, setOpenModal] = React.useState(false)
 
@@ -23,33 +25,28 @@ export default function FakePlayer({ title }) {
 
   return (
     <>
-      <div
-        onClick={handlePlayerClick}
-        className="group relative max-w-5xl mx-auto bg-black pb-[40%] cursor-pointer"
-      >
-        <div className="absolute inset-0 h-full w-full flex items-center justify-center">
-          {spin ? (
-          <Spiner />
-        ) : (
-          <>
+      <div className="max-w-5xl mx-auto">
+        <div
+          onClick={handlePlayerClick}
+          className="group relative bg-black pb-[60%] cursor-pointer"
+        >
+          <div className="absolute inset-0 h-full w-full flex items-center justify-center">
             <img
               className="absolute inset-0 h-full w-full object-contain duration-300 group-hover:opacity-75"
-              src="https://imgur.com/CM3jbTe.jpg"
+              src={image}
             />
-            <PlayButton />
+            <img
+              className="absolute w-40 object-contain top-4 right-4"
+              src="https://cpt.co.za/wp-content/uploads/2020/01/onbhkbuuyozxuazfm0iq.gif"
+            />
+            {spin && <Spiner />}
+            {!spin && <PlayButton />}
             <Controls />
-          </>
-        )}
+          </div>
         </div>
       </div>
-      {openModal && <Modal title={title} />}
+      {openModal && <Modal title={title} img={image} link={link} />}
     </>
-  )
-}
-
-function Spiner() {
-  return (
-    <span className="animate-spin absolute p-8 rounded-full border-4 border-red-500 border-r-gray-900" />
   )
 }
 
@@ -77,7 +74,7 @@ function Controls() {
           <span className="relative h-3 w-3 mr-2">
             <span className="animate-ping absolute inset-0 bg-red-600 rounded-full" />
             <span className="absolute inset-0.5 bg-red-600 rounded-full" />
-          </span>{' '}
+          </span>
           LIVE
         </div>
         <IconButton>
@@ -99,19 +96,21 @@ function IconButton({ children }) {
   )
 }
 
-function Modal({ title }) {
+function Modal({ title, img, link }) {
   return (
-    <div className="animate-slideUp fixed flex flex-col inset-0 bg-black">
-      <div className="relative w-full max-w-2xl m-auto">
+    <div className="animate-slideUp fixed z-20 flex flex-col inset-0 bg-black">
+      <div className="relative w-full max-w-2xl m-auto bg-gray-900">
         <img
           className="absolute opacity-25 inset-0 h-full w-full object-cover duration-300 group-hover:opacity-75"
-          src="https://imgur.com/CM3jbTe.jpg"
+          src={img}
         />
-        <h2 className="absolute text-gray-300 text-center w-full -mt-20 text-3xl font-medium">{title}</h2>
-        <div className="grid grid-cols-2 gap-16 relative py-24 px-12">
-          <button className="group self-center mr-auto flex items-center bg-red-600 text-white uppercase font-medium py-3 px-6 duration-300 rounded shadow hover:scale-110">
-            <span className="mr-2">Create Account</span> <IoChevronForwardCircleOutline className="duration-300 scale-150 group-hover:translate-x-2" />
-          </button>
+        <h2 className="absolute text-gray-300 text-center w-full px-4 -mt-20 text-3xl font-medium">
+          {title}
+        </h2>
+        <div className="grid md:grid-cols-2 gap-16 relative py-24 px-12">
+          <div className="self-center text-center">
+            <GoLinkButton link={link}>Create Account</GoLinkButton>
+          </div>
           <ul className="text-gray-300 space-y-2">
             <ListItem>Unlimited game access</ListItem>
             <ListItem>Search for any game</ListItem>

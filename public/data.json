@@ -1,0 +1,17 @@
+{
+  "games": [
+    {
+      "affiliate": "https://affiliate.com/link1",
+      "title": "Watch Rugby Live Streaming HD",
+      "slug": "rugby",
+      "image": "https://imgur.com/CM3jbTe.jpg"
+    },
+    {
+      "affiliate": "https://affiliate.com/link2",
+      "title": "The British Open 2021 Live Stream Free HD",
+      "slug": "golf",
+      "image": "https://i.imgur.com/bLPeTyI.jpg"
+    }
+  ],
+  "liveNow": [{ "title": "ABC vs DEF", "affiliate": "https://affiliate.com/live1" }, { "title": "IJK vs LMN", "affiliate": "https://affiliate.com/live2" }, { "title": "OPQ vs RST", "affiliate": "https://affiliate.com/live3" }, { "title": "UVW vs XYZ", "affiliate": "https://affiliate.com/live4" }]
+}
