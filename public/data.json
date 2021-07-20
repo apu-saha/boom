@@ -11,7 +11,48 @@
       "title": "The British Open 2021 Live Stream Free HD",
       "slug": "golf",
       "image": "https://i.imgur.com/bLPeTyI.jpg"
+    },
+    {
+      "affiliate": "https://affiliate.com/link2",
+      "title": "Watch Boxing 2021 Live Stream Free HD",
+      "slug": "boxing",
+      "image": "https://i.imgur.com/bLPeTyI.jpg"
+    },
+    {
+      "affiliate": "https://affiliate.com/link2",
+      "title": "Watch Formula-1 Live Stream Free HD",
+      "slug": "f1",
+      "image": "https://i.imgur.com/bLPeTyI.jpg"
+    },
+    {
+      "affiliate": "https://affiliate.com/link2",
+      "title": "Watch UFC Fight 2021 Live Stream Free HD",
+      "slug": "ufc",
+      "image": "https://i.imgur.com/bLPeTyI.jpg"
+    },
+    {
+      "affiliate": "https://affiliate.com/link2",
+      "title": "Watch Soccer 2021 Live Stream Free HD",
+      "slug": "soccer",
+      "image": "https://i.imgur.com/bLPeTyI.jpg"
     }
   ],
-  "liveNow": [{ "title": "ABC vs DEF", "affiliate": "https://affiliate.com/live1" }, { "title": "IJK vs LMN", "affiliate": "https://affiliate.com/live2" }, { "title": "OPQ vs RST", "affiliate": "https://affiliate.com/live3" }, { "title": "UVW vs XYZ", "affiliate": "https://affiliate.com/live4" }]
+  "liveNow": [
+    {
+      "title": "ABC vs DEF",
+      "affiliate": "https://affiliate.com/live1"
+    },
+    {
+      "title": "IJK vs LMN",
+      "affiliate": "https://affiliate.com/live2"
+    },
+    {
+      "title": "OPQ vs RST",
+      "affiliate": "https://affiliate.com/live3"
+    },
+    {
+      "title": "UVW vs XYZ",
+      "affiliate": "https://affiliate.com/live4"
+    }
+  ]
 }

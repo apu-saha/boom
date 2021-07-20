@@ -18,10 +18,10 @@ export default function GamePage({ link, title, image, liveItems }) {
       <FakePlayer link={link} image={image} title={title} />
       <div className="mt-12 text-center">
         <span className="inline-block m-2">
-          <GoLinkButton link={link}>Sign In</GoLinkButton>
+          <GoLinkButton link={link}>Watch Now</GoLinkButton>
         </span>
         <span className="inline-block m-2">
-          <GoLinkButton link={link}>Sign Up</GoLinkButton>
+          <GoLinkButton link={link}>Sign Up Now</GoLinkButton>
         </span>
       </div>
       <LiveNowSlider items={liveItems} link={link} />

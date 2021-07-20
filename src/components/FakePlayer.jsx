@@ -36,7 +36,7 @@ export default function FakePlayer({ title, image, link }) {
               src={image}
             />
             <img
-              className="absolute w-40 object-contain top-4 right-4"
+              className="absolute w-20 lg:w-40 object-contain top-4 right-4"
               src="https://cpt.co.za/wp-content/uploads/2020/01/onbhkbuuyozxuazfm0iq.gif"
             />
             {spin && <Spiner />}
@@ -99,23 +99,25 @@ function IconButton({ children }) {
 function Modal({ title, img, link }) {
   return (
     <div className="animate-slideUp fixed z-20 flex flex-col inset-0 bg-black">
-      <div className="relative w-full max-w-2xl m-auto bg-gray-900">
+      <div className="relative w-full max-w-3xl m-auto bg-gray-900">
         <img
           className="absolute opacity-25 inset-0 h-full w-full object-cover duration-300 group-hover:opacity-75"
           src={img}
         />
-        <h2 className="absolute text-gray-300 text-center w-full px-4 -mt-20 text-3xl font-medium">
+        <h2 className="absolute text-gray-300 text-center w-full px-4 -mt-20 text-xl md:text-3xl font-medium">
           {title}
         </h2>
         <div className="grid md:grid-cols-2 gap-16 relative py-24 px-12">
           <div className="self-center text-center">
-            <GoLinkButton link={link}>Create Account</GoLinkButton>
+            <GoLinkButton link={link}>Create Free Account</GoLinkButton>
+            <p className="mt-2 text-gray-300">Login required</p>
           </div>
           <ul className="text-gray-300 space-y-2">
             <ListItem>Unlimited game access</ListItem>
             <ListItem>Search for any game</ListItem>
             <ListItem>Ads free</ListItem>
             <ListItem>Support for all platforms</ListItem>
+            <ListItem>Watch from anywhere</ListItem>
           </ul>
         </div>
       </div>

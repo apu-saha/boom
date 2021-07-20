@@ -8,7 +8,7 @@ export default function GoLinkButton({ link, children }) {
       className="group mr-auto inline-flex items-center bg-red-600 text-white uppercase font-medium py-3 px-6 duration-300 rounded shadow hover:scale-110"
     >
       <span className="mr-2">{children}</span>
-      <IoChevronForwardCircleOutline className="duration-300 scale-150 group-hover:translate-x-1" />
+      <IoChevronForwardCircleOutline className="duration-300 text-gray-800 scale-150 group-hover:translate-x-1" />
     </a>
   )
 }
